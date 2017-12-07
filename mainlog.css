@@ -1,0 +1,161 @@
+* {
+    box-sizing: border-box
+}
+body {
+
+  margin: 0;
+  padding: 0;
+  background-repeat: repeat;
+  font-family: sans-serif;
+}
+
+.caja{
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  height: 420px;
+  padding: 80px 40px;
+  box-sizing: border-box;
+  background: rgba(251, 252, 252, .5);
+  border-radius: 40px;
+}
+
+.user{
+width: 100px;
+height: 100px;
+border-radius: 50%;
+overflow: hidden;
+position: absolute;
+top: calc(-100px/2);
+left: calc(50% - 50px);
+}
+
+h2{
+  margin: 0;
+  padding: 0 0 20px;
+  color: red;
+  text-align: center;
+
+}
+
+.caja p {
+ margin: 0;
+ padding: 0;
+ font-weight: bold;
+ color: #17202A;
+}
+
+.caja input {
+ width: 100%;
+ margin-bottom: 20px;
+}
+
+ .caja input[type="text"],
+ .caja input[type="password"] {
+   border: none;
+   border-bottom: 1px solid #17202A;
+   background: transparent;
+   outline: none;
+   height: 40px;
+   color: #17202A;
+   font-size: 16px;
+ }
+
+ ::placeholder{
+color: rgba(255, 255, 255, 0.5);
+ }
+
+ .caja input[type="submit"] {
+   border: none;
+   outline: none;
+   height: 40px;
+   color: #fff;
+   font-size: 16px;
+   background: blue;
+  cursor: pointer;
+  border-radius: 40px;
+ }
+
+ .caja input[type="submit"]:hover {
+   background: black;
+   color: orange;
+ }
+
+ a{
+   text-decoration: none;
+   text-align: center;
+   font-weight: bold;
+   color: #17202A;
+ }
+
+ a:hover{
+   color: red;
+ }
+
+ .mostrar{
+  position: relative;
+  background: rgba(241, 240, 234, 0.5);
+  font-size: 30px;
+  font-weight: bold;
+  width: 20%;
+  top: 30px;
+ }
+
+#name{
+  border-radius: 5px;
+  border-style: solid;
+  border-color: blue;
+  box-shadow: 5px;
+  margin-top: 5%;
+  margin-left: 3%;
+  height: 30px;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 16px;
+}
+img{
+  width: 200px;
+}
+
+.header{
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color:white;
+  width: 100%;
+  height: 50px;
+
+}
+
+#buscar{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: blue;
+   cursor: pointer;
+   border-radius: 5px;
+  }
+
+#buscar:hover {
+    background: black;
+    color: orange;
+}
+
+ .nueva{
+  margin-left: 20%;
+  margin-top: 0;
+ background-color: white;
+ border: black solid 1px;
+ width: 300px;
+
+}
+
+.new{
+  padding: 10px;
+
+}
