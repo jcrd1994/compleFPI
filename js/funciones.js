@@ -10,7 +10,7 @@ xhttp.open("GET", "http://www.omdbapi.com/",true);
 xhttp.send();
 
 
-function cargarMovies() {
+function cargarPeliculas() {
   var titulo=document.getElementById("name").value;
   var todobien = true;
   var xhttp = new XMLHttpRequest();

@@ -96,12 +96,13 @@ color: rgba(255, 255, 255, 0.5);
  }
 
  .mostrar{
-  position: relative;
+
   background: rgba(241, 240, 234, 0.5);
   font-size: 30px;
   font-weight: bold;
   width: 20%;
-  top: 30px;
+  float: left;
+  margin-left: 2%;
  }
 
 #name{
@@ -147,15 +148,19 @@ img{
 }
 
  .nueva{
-  margin-left: 20%;
-  margin-top: 0;
- background-color: white;
- border: black solid 1px;
- width: 300px;
+  margin-right: 20%;
+ float: right;
 
 }
 
 .new{
   padding: 10px;
+  background-color: white;
+  border: black solid 1px;
+  width: 300px;
+}
+
+.contenedor{
+overflow: hidden;
 
 }

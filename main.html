@@ -4,33 +4,23 @@
     <meta charset="utf-8">
     <title>FPI Movies</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="mainlog.css">
+    <link rel="stylesheet" href="./css/mainlog.css">
     <style media="screen">
     body{
-      background-image: url(peliculas.jpg);
+      background-image: url(./img/peliculas.jpg);
 
     }
     </style>
+     <script type="text/javascript" src="./js/funciones.js"></script>
   </head>
   <body>
 <div class="header">
   <h1>MoviesFPI</h1>
 </div>
 <div class="contenedor">
-  <div class="nueva">
-    <form class="new" action="index.html" method="post">
-      <label>Nombre: </label> <input id="ntitulo"type="text" name="" value=""><br><br>
-      <label>Año: </label> <input id="nanio" type="number" name="" value="" min="10"><br><br>
-      <label>Comentario: </label> <input type="text" name="" value="" maxlength="200"><br><br>
-      <label>Calificacion: </label> <input type="number" name="" value="" min="1" max="10"><br><br>
-      <input type="submit" name="" value="Agregar">
-      <input type="submit" name="" value="Borrar">
-      <input type="submit" name="" value="Modificar">
 
-    </form>
-  </div>
  <input id="name" type="text" placeholder="nombre de pelicula">
- <input id="buscar" type="submit" name="" value="Buscar Pelicula" onclick="cargarMovies();">
+ <input id="buscar" type="submit" name="" value="Buscar Pelicula" onclick="cargarPeliculas();">
  <br>
  <div class="mostrar">
    <img id="poster" src="" alt=""><br>
@@ -42,8 +32,64 @@
    <br>
    <label id="sinopsis"></label>
  </div>
-
+ <div class="nueva">
+   <form class="new" action="index.html" method="post">
+     <label>Titulo: </label> <input id="ntitulo"type="text" name="" value=""><br><br>
+     <label>Clasificacion: </label> <input id="nclasificacion"type="text" name="" value=""><br><br>
+     <label>Año: </label> <input id="nanio" type="number" name="" value="" min="10"><br><br>
+     <label>Comentario: </label> <input type="text" name="" value="" maxlength="200"><br><br>
+     <label>Calificacion: </label> <input type="number" name="" value="" min="1" max="10"><br><br>
+     <input type="button" value="Mostrar" onclick="cargarMovies();">
+     <input type="submit" name="" value="Agregar">
+     <input type="submit" name="" value="Borrar">
+     <input type="submit" name="" value="Modificar">
+   </form><br>
+   <label id="titulo1"></label><br>
+   <br>
+   <label id="anio1"></label><br>
+   <br>
+   <label id="clasificacion1"></label><br>
+   <br>
+   <label id="sinopsis1"></label><br>
+   <br>
+   <label id="calificacion"></label><br>
+   <br>
+   <label id="comentario"></label>
+ </div>
 </div>
- <script type="text/javascript" src="funciones.js"></script>
+
+ <script type="text/javascript">
+ //conexion a mi api restfull
+ var movies;
+
+ var xhttp2 = new XMLHttpRequest();
+ xhttp2.onreadystatechange=function(){
+   if (this.readyState==4 && this.status==200) {
+   console.log("conexion exitosa2!");
+ }
+ };
+ xhttp2.open("GET", "http://localhost:8080/getAllMovies/movies",true);
+ xhttp2.send();
+
+ function cargarMovies() {
+
+   var xhttp = new XMLHttpRequest();
+
+   xhttp.onreadystatechange= function () {
+     if (this.readyState==4 && this.status==200) {
+       movies=JSON.parse(this.responseText);
+
+       document.getElementById("titulo1").innerHTML= "Titulo: "+movies.titulo;
+       document.getElementById("anio1").innerHTML="Año: " +movies.anio;
+       document.getElementById("clasificacion1").innerHTML= "Clasificacion: "+movies.clasificacion;
+       document.getElementById("sinopsis1").innerHTML="Sinopsis: "+movies.sinopsis;
+       document.getElementById("calificacion").innerHTML="Sinopsis: "+movies.calificacion;
+       document.getElementById("comentario").innerHTML="Sinopsis: "+movies.comentario;
+     }
+   };
+   xhttp.open("GET", "http://localhost:8080/getAllMovies/movies",true);
+   xhttp.send();
+ }
+ </script>
   </body>
 </html>
