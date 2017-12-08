@@ -31,3 +31,18 @@ function cargarPeliculas() {
   xhttp.open("GET", "http://www.omdbapi.com/?t="+ titulo +"&apikey=da423c50",true);
   xhttp.send();
 }
+
+function agregar() {
+
+  var tit = document.getElementById('titulo').textContent;
+  var an = document.getElementById('anio').textContent;
+  var clas = document.getElementById('clasificacion').textContent;
+  var sin = document.getElementById('sinopsis').textContent;
+console.log(tit+", "+an+", "+clas+", "+sin);
+
+  document.getElementById('ntitulo').innerHTML = "";
+  document.getElementById('nanio').innerHTML = an;
+  document.getElementById('nclasificacion').innerHTML = clas;
+  document.getElementById('nsinopsis').innerHTML = sin;
+
+}

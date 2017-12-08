@@ -12,6 +12,9 @@
     }
     </style>
      <script type="text/javascript" src="./js/funciones.js"></script>
+     <script type="text/javascript" src="./js/pelis.js">
+
+     </script>
   </head>
   <body>
 <div class="header">
@@ -21,6 +24,7 @@
 
  <input id="name" type="text" placeholder="nombre de pelicula">
  <input id="buscar" type="submit" name="" value="Buscar Pelicula" onclick="cargarPeliculas();">
+ <input id="agrega" type="submit" name="" value="Agregar" onclick="agregar();">
  <br>
  <div class="mostrar">
    <img id="poster" src="" alt=""><br>
@@ -35,15 +39,30 @@
  <div class="nueva">
    <form class="new" action="index.html" method="post">
      <label>Titulo: </label> <input id="ntitulo"type="text" name="" value=""><br><br>
-     <label>Clasificacion: </label> <input id="nclasificacion"type="text" name="" value=""><br><br>
      <label>Año: </label> <input id="nanio" type="number" name="" value="" min="10"><br><br>
-     <label>Comentario: </label> <input type="text" name="" value="" maxlength="200"><br><br>
-     <label>Calificacion: </label> <input type="number" name="" value="" min="1" max="10"><br><br>
+     <label>Clasificacion: </label> <input id="nclasificacion"type="text" name="" value=""><br><br>
+     <label>Sinopsis: </label> <input id="nsinopsis"type="text" name="" value=""><br><br>
+     <label>Comentario: </label> <input id="ncomen" type="text" name="" value="" maxlength="200"><br><br>
+     <label>Calificacion: </label> <input id="ncali" type="number" name="" value="" min="1" max="10"><br><br>
      <input type="button" value="Mostrar" onclick="cargarMovies();">
-     <input type="submit" name="" value="Agregar">
+     <input id="add" type="button" name="" value="Agregar" onclick="registrar();">
      <input type="submit" name="" value="Borrar">
      <input type="submit" name="" value="Modificar">
    </form><br>
+   <table id="listapelis">
+         <thead>
+           <tr>
+             <th>Titulo</th>
+             <th>Año</th>
+             <th>Clasificacion</th>
+             <th>Sinopsis</th>
+             <th>Calificacion</th>
+             <th>Comentario</th>
+           </tr>
+         </thead>
+         <tbody id="tbDatos">
+
+         </tbody><br>
    <label id="titulo1"></label><br>
    <br>
    <label id="anio1"></label><br>
@@ -59,6 +78,7 @@
 </div>
 
  <script type="text/javascript">
+ 
  //conexion a mi api restfull
  var movies;
 
@@ -83,11 +103,11 @@
        document.getElementById("anio1").innerHTML="Año: " +movies.anio;
        document.getElementById("clasificacion1").innerHTML= "Clasificacion: "+movies.clasificacion;
        document.getElementById("sinopsis1").innerHTML="Sinopsis: "+movies.sinopsis;
-       document.getElementById("calificacion").innerHTML="Sinopsis: "+movies.calificacion;
-       document.getElementById("comentario").innerHTML="Sinopsis: "+movies.comentario;
+       document.getElementById("calificacion").innerHTML="calificacion: "+movies.calificacion;
+       document.getElementById("comentario").innerHTML="Comentario: "+movies.comentario;
      }
    };
-   xhttp.open("GET", "http://localhost:8080/getAllMovies/movies",true);
+   xhttp.open("GET", "http://localhost:8080/getAllMovies/Goal/movies",true);
    xhttp.send();
  }
  </script>

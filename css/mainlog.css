@@ -146,10 +146,29 @@ img{
     background: black;
     color: orange;
 }
+#agrega{
+    border: none;
+    outline: none;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    background: blue;
+   cursor: pointer;
+   border-radius: 5px;
+  }
+
+#agrega:hover {
+    background: black;
+    color: orange;
+}
 
  .nueva{
   margin-right: 20%;
  float: right;
+ background: rgba(241, 240, 234, 0.5);
+ font-size: 20px;
+ font-weight: bold;
+ width: 20%;
 
 }
 
@@ -158,9 +177,15 @@ img{
   background-color: white;
   border: black solid 1px;
   width: 300px;
+  font-size: 16px;
+  font-weight: normal;
 }
 
 .contenedor{
 overflow: hidden;
+
+}
+#listapelis{
+background-color: white;
 
 }

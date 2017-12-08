@@ -9,9 +9,12 @@
       background-image: url(./img/fondo.jpg);
       background-size: cover;
     }
+    .lb{color: white;}
     </style>
   </head>
   <body>
+    <label class="lb">usuario: admin</label><br>
+    <label class="lb">contrasena: admin</label>
     <div class="caja">
       <img src="./img/user.png" alt="usuario" class="user">
         <h2>Login</h2>
@@ -20,10 +23,44 @@
     	<input type="text" id="usuario" placeholder="Ingresa un Usuario">
       <p>Contraseña</p>
     	<input type="password" id="contrasena" placeholder="Ingresa Contraseña"><br><br>
-    	<input id="btn" type="submit"  value="Ingresar" >
+    	<input id="btn" type="submit"  value="Ingresar" onclick="login();">
       <a href="">Registrate aqui</a>
     </form>
   </div>
+  <script type="text/javascript">
+    var oPersonas = [
+    {
+    usuario: "admin",
+    contrasena: "admin"
+    },
+    {
+    usuario: "julio",
+    contrasena: "julio"
+    }
 
+    ]
+
+    function login() {
+    var user = document.getElementById('usuario').value
+    var pass = document.getElementById('contrasena').value
+
+    for(var i = 0; i < oPersonas.length; i++) {
+    // verificamos si el usuario y contrasena coinciden con los existentes
+    if(user == oPersonas[i].usuario && pass == oPersonas[i].contrasena) {
+    alert("Bienvenid@: " + user)
+    if (user === "ash") {
+      window.open("main.html");
+    } else if (user === "julio") {
+      window.open("main.html");
+    }
+
+    // detenmos la funcion el usuario y contrasena son correctos
+    return
+    }
+    }
+    alert("El usuario o la contraseña son incorrectos")
+    }
+
+  </script>
   </body>
 </html>
